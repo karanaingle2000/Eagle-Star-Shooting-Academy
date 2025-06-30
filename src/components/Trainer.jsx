@@ -1,62 +1,38 @@
 // src/pages/TrainerPage.jsx
 
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import { FaQuoteLeft } from 'react-icons/fa';
 
 const trainers = [
   {
-    name: 'Mr. Arjun Singh',
-    title: 'Head Coach & National Shooter',
-    image: '/trainers/arjun.jpg',
-    bio: 'With 20+ years of experience, Arjun has trained over 300 national-level shooters with excellence in air rifle and pistol shooting.'
+    name: 'Mr. Sundar Ghate ',
+    title: 'Head Coach',
+    image: '/Director.jpeg',
+    bio: 'With 20+ years of experience, Mr.Sundar has trained over 300 national-level shooters with excellence in air rifle and pistol shooting.',
+    quote: 'Discipline, focus, and passion — the formula for champions.'
   },
   {
-    name: 'Ms. Kavita Rao',
-    title: 'Certified Range Safety Officer',
-    image: '/trainers/kavita.jpg',
-    bio: 'A passionate advocate for safe shooting practices, Kavita ensures every trainee learns with confidence and discipline.'
+    name: 'Ms. Tejaswini Kadam',
+    title: 'Certified Shooter',
+    image: '/kadam.jpeg',
+    bio: 'Tejaswini Kadam is a national-level shooter from Maharashtra and a distinguished University medalist. She earned her credentials as a certified shooting coach from NIS.',
+    quote: 'Safety first, success always.'
   },
   {
-    name: 'Mr. Rohan Mehta',
-    title: 'Fitness & Mindset Coach',
-    image: '/trainers/rohan.jpg',
-    bio: 'Combining physical endurance training with mental resilience, Rohan builds champions from within.'
+    name: 'Mr. Akshay Kamble',
+    title: 'National Player',
+    image: '/kamble.jpeg',
+    bio: 'Combining physical endurance training with mental resilience, Akshay builds champions from within.',
+    quote: 'Train your body, free your mind.'
   },
-  {
-    name: 'Ms. Nisha Verma',
-    title: 'Junior Training Specialist',
-    image: '/trainers/nisha.jpg',
-    bio: 'Nisha focuses on nurturing young talents with patience, precision, and care.'
-  },
-  {
-    name: 'Mr. Manish Rawat',
-    title: 'Technical Weapon Specialist',
-    image: '/trainers/manish.jpg',
-    bio: 'Expert in weapon maintenance and calibration, Manish ensures that all gear is competition-ready.'
-  },
-  {
-    name: 'Ms. Priya Dutt',
-    title: 'Mental Conditioning Coach',
-    image: '/trainers/priya.jpg',
-    bio: 'Priya helps athletes sharpen their focus and maintain peak performance under pressure.'
-  },
-  {
-    name: 'Mr. Anil Thakur',
-    title: 'Outdoor Field Trainer',
-    image: '/trainers/anil.jpg',
-    bio: 'Specialized in long-range and outdoor shooting techniques, Anil brings real-world shooting conditions to training.'
-  },
-  {
-    name: 'Ms. Sneha Batra',
-    title: 'Women Empowerment Program Lead',
-    image: '/trainers/sneha.jpg',
-    bio: 'Sneha empowers female shooters by mentoring them with tailored training and leadership development.'
-  }
 ];
 
 const Trainer = () => {
+  const [zoomImage, setZoomImage] = useState(null);
+
   return (
-    <div className="bg-gradient-to-b from-black via-gray-950 to-black text-white py-20 px-4 sm:px-6 min-h-screen">
+    <div className="bg-gradient-to-b from-black via-gray-950 to-black text-white py-20 px-4 sm:px-6 min-h-screen relative">
       <motion.h2
         className="text-4xl font-extrabold text-center mb-12 text-yellow-400 tracking-widest uppercase"
         initial={{ opacity: 0, y: -20 }}
@@ -66,31 +42,50 @@ const Trainer = () => {
         Meet Our Expert Trainers
       </motion.h2>
 
-      <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-10 max-w-7xl mx-auto">
         {trainers.map((trainer, index) => (
           <motion.div
             key={index}
-            className="bg-gray-900 max-w-xs w-full rounded-3xl overflow-hidden shadow-2xl hover:shadow-yellow-500/50 border border-yellow-400"
+            className="bg-gray-900 rounded-3xl overflow-hidden shadow-2xl hover:shadow-yellow-500/50 border border-yellow-400 transform transition-transform duration-500 hover:scale-[1.03] hover:-translate-y-1"
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
           >
-            <img
-              src={trainer.image}
-              alt={trainer.name}
-              className="w-full h-64 object-cover rounded-t-3xl"
-            />
-            <div className="p-5 flex flex-col justify-between h-60">
+            <div className="w-full h-96 relative cursor-pointer group" onClick={() => setZoomImage(trainer.image)}>
+              <img
+                src={trainer.image}
+                alt={trainer.name}
+                className="w-full h-full object-cover rounded-t-3xl transition-transform duration-300 group-hover:scale-105"
+              />
+            </div>
+            <div className="p-5 flex flex-col justify-between min-h-[250px]">
               <div>
-                <h3 className="text-xl font-bold text-yellow-400">{trainer.name}</h3>
-                <p className="text-sm text-gray-300 italic mb-2">{trainer.title}</p>
+                <h3 className="text-xl font-bold text-yellow-400 mb-1">{trainer.name}</h3>
+                <p className="text-sm text-gray-300 italic mb-3">{trainer.title}</p>
               </div>
-              <p className="text-xs sm:text-sm text-gray-400 leading-snug">{trainer.bio}</p>
+              <p className="text-sm text-gray-400 leading-snug mb-3">{trainer.bio}</p>
+              <div className="text-gray-500 text-sm italic flex items-start gap-2">
+                <FaQuoteLeft className="text-yellow-400 mt-1" />
+                <span>{trainer.quote}</span>
+              </div>
             </div>
           </motion.div>
         ))}
       </div>
+
+      {zoomImage && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center z-50"
+          onClick={() => setZoomImage(null)}
+        >
+          <img
+            src={zoomImage}
+            alt="Zoomed Trainer"
+            className="max-w-4xl max-h-[90vh] object-contain border-4 border-yellow-400 rounded-2xl shadow-2xl animate-fadeIn"
+          />
+        </div>
+      )}
     </div>
   );
 };

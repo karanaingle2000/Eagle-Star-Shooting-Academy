@@ -16,7 +16,7 @@ const Header = () => {
         {/* Logo */}
         <div className="flex items-center space-x-3">
           <img
-            src="/public/Logo.JPEG" 
+            src="/Logo1.jpg" 
             alt="Eagle Star Logo"
             className="h-12 w-12 rounded-full border-2 border-yellow-500"
           />

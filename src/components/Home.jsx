@@ -8,25 +8,26 @@ const Home = () => {
   return (
     <div className="relative text-white min-h-screen bg-gray-900">
       {/* Hero Section */}
-      <section className="relative h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6">
-        <div className="absolute inset-0 bg-gray-950" />
+      <section className="relative h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 bg-[url('/range-bg.jpg')] bg-cover bg-center">
+        <div className="absolute inset-0 bg-[rgba(0,60,0,0.75)] mix-blend-multiply" />
         <motion.div
           className="relative z-10 flex flex-col items-center"
           initial={{ opacity: 0, y: -30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <div className="w-32 sm:w-40 md:w-60 h-32 sm:h-40 md:h-65 rounded-full overflow-hidden mb-20 mix-blend-multiply">
-            <img src="/Logo.jpeg" alt="Academy Logo" className="w-full h-full object-cover" />
-          </div>
-          <h1 className="text-4xl sm:text-5xl md:text-7xl font-extrabold text-yellow-300 mb-10 drop-shadow-2xl">Eagle Star Shooting Academy</h1>
-          <p className="text-lg sm:text-xl md:text-2xl max-w-3xl text-yellow-100 mb-10">Be Your Own Light </p>
-          <a href="#contact" className="bg-yellow-400 text-black font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition duration-300 shadow-md">Join Now</a>
+          <div className="w-52 sm:w-64 md:w-72 h-52 sm:h-64 md:h-72 rounded-full overflow-hidden mb-8 border-4 border-yellow-400 shadow-md">
+  <img src="/Logo1.jpg" alt="Academy Logo" className="w-full h-full object-cover mix-blend-screen" />
+</div>
+
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-yellow-300 tracking-wide drop-shadow-md font-[serif]">Eagle Star Shooting Academy</h1>
+          <p className="text-lg sm:text-xl md:text-2xl mt-4 max-w-xl text-yellow-100 italic">Be Your Own Light.</p>
+          <a href="/contact" className="mt-6 bg-yellow-400 text-black font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition duration-300 shadow-lg">Join Us </a>
         </motion.div>
       </section>
 
       {/* Features Section */}
-      <section className="py-20 px-6 bg-gray-950 text-white">
+      <section className="py-20 px-6 bg-[#1a1f1c] text-white">
         <motion.h2
           className="text-4xl font-bold text-center mb-16 text-yellow-400 uppercase"
           initial={{ opacity: 0 }}
@@ -51,38 +52,36 @@ const Home = () => {
           }].map((item, i) => (
             <motion.div
               key={i}
-              className="bg-gradient-to-tr from-yellow-400 via-yellow-300 to-yellow-200 text-black rounded-2xl p-8 text-center shadow-xl hover:scale-105 transition-transform"
+              className="bg-[#243c2e] border border-green-700 rounded-2xl p-8 text-center shadow-xl hover:scale-105 transition-transform"
               whileInView={{ opacity: 1, y: 0 }}
               initial={{ opacity: 0, y: 40 }}
               transition={{ duration: 0.5, delay: i * 0.2 }}
             >
-              <item.Icon className="text-5xl mx-auto mb-6" />
-              <h3 className="text-2xl font-semibold mb-2">{item.title}</h3>
-              <p className="text-sm sm:text-base text-gray-800">{item.desc}</p>
+              <item.Icon className="text-5xl mx-auto mb-6 text-yellow-400" />
+              <h3 className="text-2xl font-semibold mb-2 text-yellow-300">{item.title}</h3>
+              <p className="text-sm sm:text-base text-gray-200">{item.desc}</p>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* Director Section */}
-      <section className="py-20 px-6 bg-black text-white">
-        <motion.div
-          className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-10 items-center"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.6 }}
-        >
+      <section className="bg-[url('/army-bg.jpg')] bg-cover bg-center bg-fixed text-white py-20 px-6">
+        <div className="bg-black bg-opacity-70 p-6 rounded-xl max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
           <motion.div whileHover={{ scale: 1.03 }} className="overflow-hidden rounded-2xl border-4 border-yellow-400 shadow-lg">
-            <img src="/public/director.JPEG" alt="Director" className="w-full h-auto object-cover" />
+            <img src="/Director.jpeg" alt="Director" className="w-full h-auto object-cover" />
           </motion.div>
           <div>
             <h2 className="text-4xl font-bold text-yellow-400 mb-4">Meet Our Director</h2>
             <h3 className="text-2xl font-semibold mb-3">Mr. Sundar Ghate</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-              A veteran with 20+ years in shooting and coaching, ex-Indian Army (YBC team), former chief coach at District Rifle Association Chhatrapati Sambhaji Ngara . Personal coach to Olympian Esha Singh. Mr. Ghate’s legacy is one of excellence, leadership, and dedication.
-            </p>
+            I began my coaching career in shooting in 2001 and turned professional in 2005 with the Aurangabad Rifle Association. From 2007 to 2012, I served as Chief Coach of the Aurangabad District Rifle Association, producing several national-level shooters.
+
+In 2013, I founded a professional coaching center at Shiv Chhatrapati Sports Complex, Pune. Under my mentorship, many athletes have achieved success at national and international levels. A career highlight was in 2017, when my student Eash Singh won 3 gold medals at the National Shooting Championship and later represented India at the 2024 Paris Olympics.
+
+I’ve also coached the Maratha Regiment’s YBC team and trained athletes from various states including Maharashtra, Telangana, Andhra Pradesh, Haryana, and Karnataka. With over 25 years of experience, my mission is to continue shaping world-class shooters for India.            </p>
           </div>
-        </motion.div>
+        </div>
       </section>
 
       {/* Call to Action */}

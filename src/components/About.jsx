@@ -18,9 +18,9 @@ const About = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center mb-20">
           <motion.img
-            src="/Logo.jpeg"
+            src="/Logo1.jpg"
             alt="Academy View"
-            className="w-full h-170  rounded-3xl shadow-2xl border-4 border-yellow-400"
+            className="w-full h-auto rounded-3xl shadow-2xl border-4 border-yellow-400"
             initial={{ opacity: 0, scale: 0.9 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5 }}
@@ -32,20 +32,13 @@ const About = () => {
             transition={{ duration: 0.6 }}
           >
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6">
-              Established with a passion for excellence, <span className="text-yellow-400 font-semibold">Eagle Star Shooting Academy</span> is a
-              premier institution dedicated to promoting the sport of shooting in India. We offer comprehensive training programs
-              that focus on technical skills, mental discipline, and physical fitness.
+              Established with a passion for excellence, <span className="text-yellow-400 font-semibold">Eagle Star Shooting Academy</span> is a premier institution dedicated to promoting the sport of shooting across India. We offer comprehensive training programs that focus on technical precision, mental discipline, and physical endurance — empowering shooters to rise beyond limits.
             </p>
-
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed mb-6">
-              Whether you’re a beginner or an advanced shooter, our state-of-the-art facilities and national-level coaches
-              ensure you receive the best possible guidance. Our mission is to inspire, train, and shape the future champions
-              of India.
+              Whether you’re a beginner stepping into the world of shooting or an aspiring national champion, our state-of-the-art facilities, customized training modules, and renowned national-level coaches ensure that you receive elite guidance every step of the way.
             </p>
-
             <p className="text-base sm:text-lg text-gray-300 leading-relaxed">
-              We regularly host inter-academy meets, state championships, and provide students the opportunity to participate
-              in national-level events. At Eagle Star, we believe in more than just aiming — we believe in achieving.
+              At Eagle Star, we go beyond training — we build confidence, instill discipline, and sharpen focus. Our shooters are not just athletes; they are future champions, molded with determination and fueled by excellence.
             </p>
           </motion.div>
         </div>
@@ -78,61 +71,105 @@ const About = () => {
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 sm:gap-10 text-center mb-20"
+          className="mb-20"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
+          transition={{ duration: 0.6 }}
         >
-          {[
-            {
-              title: "Digital Target Systems",
-              text: "Advanced electronic scoring systems for instant feedback and accuracy tracking."
-            },
-            {
-              title: "24/7 Indoor Range",
-              text: "Fully-equipped, climate-controlled range accessible anytime for serious trainees."
-            },
-            {
-              title: "Certified Coaching",
-              text: "Coaches with national certifications and experience in international championships."
-            },
-            {
-              title: "Scholarship Opportunities",
-              text: "Merit-based programs for dedicated and talented shooters to fund their training."
-            },
-          ].map((feature, index) => (
-            <div key={index} className="bg-gray-900 rounded-2xl p-6 border border-yellow-400 hover:scale-105 transition">
-              <h4 className="text-lg font-semibold text-yellow-300 mb-2">{feature.title}</h4>
-              <p className="text-gray-300">{feature.text}</p>
-            </div>
-          ))}
+          <h2 className="text-2xl sm:text-3xl font-semibold text-yellow-400 text-center mb-10">Why Choose Eagle Star Shooting Academy?</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+            {[
+              "🏅 Experienced and Certified National Coaches",
+              "🎯 World-Class Shooting Range and Equipment",
+              "📈 Individual Progress Tracking and Mental Conditioning",
+              "🧠 Focused Psychological and Physical Fitness Training",
+              "🏆 Participation in Recognized State and National Events",
+              "🤝 Mentorship from Former and Current Shooting Legends"
+            ].map((point, idx) => (
+              <div key={idx} className="bg-gray-900 rounded-2xl p-6 border border-yellow-400 text-gray-300 hover:scale-105 transition">
+                {point}
+              </div>
+            ))}
+          </div>
         </motion.div>
 
         <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 text-center"
+          className="mb-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          <h2 className="text-2xl sm:text-3xl font-semibold text-yellow-400 text-center mb-10">Our Features</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            {[
+              {
+                title: "Digital Target Systems",
+                text: "Advanced electronic scoring systems for instant feedback and accuracy tracking."
+              },
+              {
+                title: "24/7 Indoor Range",
+                text: "Fully-equipped, climate-controlled range accessible anytime for serious trainees."
+              },
+              {
+                title: "Certified Coaching",
+                text: "Coaches with national certifications and experience in international championships."
+              },
+              {
+                title: "Scholarship Opportunities",
+                text: "Merit-based programs for dedicated and talented shooters to fund their training."
+              }
+            ].map((feature, index) => (
+              <div key={index} className="bg-gray-900 rounded-2xl p-6 border border-yellow-400 hover:scale-105 transition">
+                <h4 className="text-lg font-semibold text-yellow-300 mb-2">{feature.title}</h4>
+                <p className="text-gray-300">{feature.text}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="mb-20"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          transition={{ duration: 0.6, delay: 0.3 }}
+        >
+          <h2 className="text-2xl sm:text-3xl font-semibold text-yellow-400 text-center mb-10">Beyond the Range</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
+            {[
+              {
+                title: "National-Level Collaborations",
+                text: "Partnerships with sports federations and shooting clubs for broader exposure and opportunities."
+              },
+              {
+                title: "Women Empowerment Programs",
+                text: "Specialized training modules and scholarships to encourage female participation in shooting sports."
+              },
+              {
+                title: "Fitness & Wellness Support",
+                text: "Personalized fitness plans and mental coaching to build strength, focus, and performance."
+              },
+            ].map((item, index) => (
+              <div key={index} className="bg-gray-900 rounded-2xl p-6 border border-yellow-400 hover:scale-105 transition">
+                <h4 className="text-lg font-semibold text-yellow-300 mb-2">{item.title}</h4>
+                <p className="text-gray-300">{item.text}</p>
+              </div>
+            ))}
+          </div>
+        </motion.div>
+
+        <motion.div
+          className="text-center"
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          {[
-            {
-              title: "National-Level Collaborations",
-              text: "Partnerships with sports federations and shooting clubs for broader exposure and opportunities."
-            },
-            {
-              title: "Women Empowerment Programs",
-              text: "Specialized training modules and scholarships to encourage female participation in shooting sports."
-            },
-            {
-              title: "Fitness & Wellness Support",
-              text: "Personalized fitness plans and mental coaching to build strength, focus, and performance."
-            },
-          ].map((item, index) => (
-            <div key={index} className="bg-gray-900 rounded-2xl p-6 border border-yellow-400 hover:scale-105 transition">
-              <h4 className="text-lg font-semibold text-yellow-300 mb-2">{item.title}</h4>
-              <p className="text-gray-300">{item.text}</p>
-            </div>
-          ))}
+          <h2 className="text-2xl sm:text-3xl font-semibold text-yellow-400 mb-6">Our Philosophy</h2>
+          <div className="text-lg text-gray-300 space-y-2">
+            <p>“You don’t just shoot — you sharpen your spirit.”</p>
+            <p>“At Eagle Star, we don’t just aim — we achieve.”</p>
+            <p>“Focus. Fire. Fly to Victory.”</p>
+            <p>“From First Shot to Podium Stand — We’re With You.”</p>
+          </div>
         </motion.div>
       </div>
     </section>

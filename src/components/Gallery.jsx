@@ -1,33 +1,52 @@
-// src/pages/Gallery.jsx
-
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const galleryImages = [
-  { src: '/Logo1.jpg', caption: 'Opening Ceremony', description: 'Inauguration by Chief Guest with ribbon-cutting moment.' },
-  { src: '/gallery/img2.jpg', caption: 'Training in Action', description: 'Students practicing under expert supervision.' },
-  { src: '/gallery/img3.jpg', caption: 'Junior Category', description: 'Our young champions honing their skills.' },
-  { src: '/gallery/img4.jpg', caption: 'Senior Division', description: 'High-level precision shooting by seniors.' },
-  { src: '/gallery/img5.jpg', caption: 'Women’s League', description: 'Empowering women through professional training.' },
-  { src: '/gallery/img6.jpg', caption: 'Award Ceremony', description: 'Winners receiving medals and trophies.' },
-  { src: '/gallery/img7.jpg', caption: 'Group Session', description: 'Batch mentoring and teamwork drills.' },
-  { src: '/gallery/img8.jpg', caption: 'Instructor Demo', description: 'Live demo by national coach Mr. Arjun Singh.' },
-  { src: '/gallery/img9.jpg', caption: 'Night Practice', description: 'Evening training under floodlights.' },
-  { src: '/gallery/img10.jpg', caption: 'Trophy Wall', description: 'Display of academy’s achievements.' },
-  { src: '/gallery/img11.jpg', caption: 'Safety Drill', description: 'Hands-on safety workshop.' },
-  { src: '/gallery/img12.jpg', caption: 'Indoor Practice', description: 'Advanced training in controlled environment.' },
-  { src: '/gallery/img13.jpg', caption: 'Outdoor Field', description: 'Practice range with scenic backdrop.' },
-  { src: '/gallery/img14.jpg', caption: 'Coaching Session', description: 'One-on-one mentoring session.' },
+   { src: '/c1.jpeg', caption: 'Opening Ceremony', description: 'Inauguration by Chief Guest with ribbon-cutting moment.' },
+  { src: '/c2.jpeg', caption: 'Opening Ceremony', description: 'A powerful guest address that inspired, encouraged, and energized the spirit of the event..' },
+  { src: '/c3.jpeg', caption: 'Opening Ceremony', description: 'Sundar Ghate, our respected Director, had the honor of felicitating Mr. Anil Rao, CEO of Primus Energy Solutions Pvt. Ltd., during the opening ceremony.' },
+  { src: '/t4.jpeg', caption: 'Group Session', description: 'Under the expert guidance of Sundar Ghate Sir, our group session sharpened both skill and discipline.' },
+  { src: '/t1.jpeg', caption: 'Group Session', description: 'A memorable training experience led by Sundar Ghate Sir — inspiring focus, unity, and excellence.' },
+  { src: '/t2.jpeg', caption: 'Instructor Demo', description: 'Guided by Sundar Ghate Sir, each shot in our group session echoed confidence and precision..' },
+  { src: '/adi.jpeg', caption: 'Night Practice', description: 'Evening training under floodlights.' },
+  { src: '/parth.jpeg', caption: 'Trophy Wall', description: 'A moment of glory as our champions step forward, proving that hard work always hits the mark.' },
+  { src: '/girl1.jpeg', caption: 'Safety Drill', description: 'Practicing precision with responsibility during our safety drill on the shooting range.s' },
+  { src: '/medal.jpeg', caption: 'Indoor Practice', description: 'Pride shines as students of Eagle Star Shooting Academy are honored with well-deserved medals.' },
+  { src: '/ips.jpeg', caption: 'Outdoor Field', description: 'Honored to see Sundar Ghate Sir, who had the privilege of training IPS Ravindra Singal — now Commissioner of Police, Nagpur & ADG' },
+  { src: '/t3.jpeg', caption: 'Coaching Session', description: 'Honored to have Sundar Ghate Sir share his shooting mastery with the Indian Army Maratha Regiment YBC team.' },
   { src: '/gallery/img15.jpg', caption: 'Team Outing', description: 'Academy recreational and bonding activities.' },
   { src: '/gallery/img16.jpg', caption: 'Final Shootout', description: 'Top-tier competition closing event.' },
+];
+
+const videoClips = [
+  {
+    src: "/Ravindra sir.mp4",
+    caption: "Message from IPS Ravindra Singal",
+    description: "Motivational speech about youth discipline and national pride.",
+    slogan: "✨ Discipline today, leadership tomorrow."
+  },
+  {
+    src: "/Esha.mp4",
+    caption: "Olympian Esha Singh Shares Her Experience",
+    description: "Esha Singh, a rising star in Indian shooting and Paris Olympics participant, shares her journey, motivation, and message to the next generation of shooters.",
+    slogan: "🎯 Aim high, shoot higher."
+  },
+  {
+    src: "/preet sir.mp4",
+    caption: "Colonel Preet Chohan's Greeting",
+    description: "Colonel Preet Chohan, one of the finest shooters in the Indian Army and part of the Maratha Light Infantry, sends his warm wishes and support to Eagle Star Shooting Academy.",
+    slogan: "🏅 Discipline, Honor, Victory."
+  }
 ];
 
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
   return (
-    <div className="bg-black text-white  min-h-screen">
+    <div className="bg-black text-white min-h-screen">
       <section className="py-20 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-black/80 via-gray-900/80 to-black/80 border-t border-yellow-400">
+
+        {/* Gallery Heading */}
         <motion.h2
           className="text-3xl sm:text-4xl font-bold text-center mb-12 text-yellow-400 uppercase"
           initial={{ opacity: 0 }}
@@ -37,6 +56,7 @@ const Gallery = () => {
           Gallery
         </motion.h2>
 
+        {/* Gallery Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-10 max-w-7xl mx-auto">
           {galleryImages.map((img, i) => (
             <motion.div
@@ -51,8 +71,10 @@ const Gallery = () => {
               <img
                 src={img.src}
                 alt={img.caption}
-                className="w-full h-40 sm:h-60 md:h-48 lg:h-44 xl:h-52 object-cover group-hover:opacity-80 transition duration-300"
+                className="group-hover:opacity-80 transition duration-300"
+                style={{ width: 'auto', height: 'auto', maxWidth: '100%', maxHeight: '100%' }}
               />
+
               <div className="p-4 text-center bg-gray-900/80">
                 <p className="text-yellow-400 font-semibold text-sm sm:text-base">{img.caption}</p> 
                 <p className="text-gray-400 text-xs sm:text-sm mt-1">{img.description}</p>
@@ -61,6 +83,7 @@ const Gallery = () => {
           ))}
         </div>
 
+        {/* Zoom Modal */}
         <AnimatePresence>
           {selectedImage && (
             <motion.div
@@ -81,6 +104,36 @@ const Gallery = () => {
             </motion.div>
           )}
         </AnimatePresence>
+
+        {/* Video Section */}
+        <div className="mt-16 text-center">
+          <marquee behavior="scroll" direction="left" scrollamount="6" className="text-yellow-400 text-lg font-semibold mb-4">
+            Eagle Star Shooting Academy - Behind the Scenes Training Moments
+          </marquee>
+
+          <p className="text-yellow-300 text-sm sm:text-base max-w-4xl mx-auto mb-6">
+            We are honored by the presence of <strong>IPS (ADG) Ravindra Singal</strong>, Commissioner of Police, Nagpur. His leadership, integrity, and inspiring support for youth and discipline elevate our academy's spirit.
+          </p>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {videoClips.map((video, index) => (
+              <div key={index}>
+                <video
+                  src={video.src}
+                  className="w-auto h-auto rounded-lg border-2 border-yellow-400 shadow-xl"
+                  
+                  loop
+                  muted
+                  controls
+                />
+                <p className="mt-3 text-yellow-300 font-semibold">{video.caption}</p>
+                <p className="text-sm text-gray-400 italic mb-1">{video.description}</p>
+                <p className="text-sm text-yellow-500 font-bold">{video.slogan}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+
       </section>
     </div>
   );

@@ -77,7 +77,7 @@ const Home = () => {
             <p className="text-gray-300 text-lg leading-relaxed">
             I began my coaching career in shooting in 2001 and turned professional in 2005 with the Aurangabad Rifle Association. From 2007 to 2012, I served as Chief Coach of the Aurangabad District Rifle Association, producing several national-level shooters.
 
-In 2013, I founded a professional coaching center at Shiv Chhatrapati Sports Complex, Pune. Under my mentorship, many athletes have achieved success at national and international levels. A career highlight was in 2017, when my student Eash Singh won 3 gold medals at the National Shooting Championship and later represented India at the 2024 Paris Olympics.
+In 2013, I founded a professional coaching center at Shiv Chhatrapati Sports Complex, Pune. Under my mentorship, many athletes have achieved success at national and international levels. A career highlight was in 2017, when my student Esha Singh won 3 gold medals at the National Shooting Championship and later represented India at the 2024 Paris Olympics.
 
 I’ve also coached the Maratha Regiment’s YBC team and trained athletes from various states including Maharashtra, Telangana, Andhra Pradesh, Haryana, and Karnataka. With over 25 years of experience, my mission is to continue shaping world-class shooters for India.            </p>
           </div>

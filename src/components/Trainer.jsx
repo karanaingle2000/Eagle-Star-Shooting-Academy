@@ -7,25 +7,26 @@ import { FaQuoteLeft } from 'react-icons/fa';
 const trainers = [
   {
     name: 'Mr. Sundar Ghate ',
-    title: 'Head Coach',
+    title: 'Chief Coach',
     image: '/Director.jpeg',
     bio: 'With 20+ years of experience, Mr.Sundar has trained over 300 national-level shooters with excellence in air rifle and pistol shooting.',
     quote: 'Discipline, focus, and passion — the formula for champions.'
   },
   {
-    name: 'Ms. Tejaswini Kadam',
-    title: 'Certified Shooter',
-    image: '/kadam.jpeg',
-    bio: 'Tejaswini Kadam is a national-level shooter from Maharashtra and a distinguished University medalist. She earned her credentials as a certified shooting coach from NIS.',
-    quote: 'Safety first, success always.'
-  },
-  {
     name: 'Mr. Akshay Kamble',
-    title: 'National Player',
+    title: 'National Player  & NIS certified coach',
     image: '/kamble.jpeg',
     bio: 'Combining physical endurance training with mental resilience, Akshay builds champions from within.',
     quote: 'Train your body, free your mind.'
   },
+  {
+    name: 'Ms. Tejaswini Kadam',
+    title: 'National Plyer & NIS certified coach',
+    image: '/kadam.jpeg',
+    bio: 'Tejaswini Kadam is a national-level shooter from Maharashtra and a distinguished University medalist. She earned her credentials as a certified shooting coach from NIS.',
+    quote: 'Safety first, success always.'
+  },
+ 
 ];
 
 const Trainer = () => {

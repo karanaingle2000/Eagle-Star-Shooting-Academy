@@ -87,7 +87,7 @@ const About = () => {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
             {[
-              "🏅 Experienced and Certified National Coaches",
+              "🏅 Experienced and NIS Certified National Coaches",
               "🎯 World-Class Shooting Range and Equipment",
               "📈 Individual Progress Tracking and Mental Conditioning",
               "🧠 Focused Psychological and Physical Fitness Training",
@@ -107,9 +107,10 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
             {[
               { title: "Digital Target Systems", text: "Electronic scoring systems for instant feedback." },
-              { title: "24/7 Indoor Range", text: "Climate-controlled range for serious trainees." },
-              { title: "Certified Coaching", text: "Nationally certified coaches with experience." },
+               { title: "Certified Coaching", text: "Nationally certified coaches with experience." },
               { title: "Scholarship Opportunities", text: "Funding support for deserving shooters." },
+              { title: "Advanced Safety Measures", text: "Strict safety protocols and modern equipment ensure secure training." },
+
             ].map((feature, index) => (
               <div key={index} className="bg-[#2c3e2f] rounded-2xl p-6 border border-green-600 hover:scale-105 transition">
                 <h4 className="text-lg font-semibold text-yellow-400 mb-2">{feature.title}</h4>

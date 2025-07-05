@@ -93,7 +93,7 @@ I’ve also coached the Maratha Regiment’s YBC team and trained athletes from 
       >
         <h2 className="text-4xl md:text-5xl font-extrabold mb-4">Ready to Hit the Bullseye?</h2>
         <p className="mb-6 text-lg max-w-2xl mx-auto">Join Eagle Star Shooting Academy and train with the finest. Your champion journey begins now.</p>
-        <a href="/Contact" className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition text-sm sm:text-base">Get Started</a>
+        <a href="/contact" className="bg-black text-white px-8 py-3 rounded-full font-bold hover:bg-gray-800 transition text-sm sm:text-base">Get Started</a>
       </motion.section>
     </div>
   );

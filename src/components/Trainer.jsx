@@ -7,7 +7,7 @@ import { FaQuoteLeft } from 'react-icons/fa';
 const trainers = [
   {
     name: 'Mr. Sundar Ghate ',
-    title: 'Chief Coach',
+    title: 'Chief    Coach',
     image: '/Director.jpeg',
     bio: 'With 20+ years of experience, Mr.Sundar has trained over 300 national-level shooters with excellence in air rifle and pistol shooting.',
     quote: 'Discipline, focus, and passion — the formula for champions.'

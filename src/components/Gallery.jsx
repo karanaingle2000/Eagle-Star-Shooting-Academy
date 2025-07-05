@@ -2,21 +2,20 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const galleryImages = [
-   { src: '/c1.jpeg', caption: 'Opening Ceremony', description: 'Inauguration by Chief Guest with ribbon-cutting moment.' },
+   { src: '/c1.jpeg', caption: 'Opening Ceremony', description: 'A moment of pride as Shiv Chhatrapati Awardee Seema Patwardhan graced our opening ceremony with a ceremonial ribbon cutting..' },
   { src: '/c2.jpeg', caption: 'Opening Ceremony', description: 'A powerful guest address that inspired, encouraged, and energized the spirit of the event..' },
   { src: '/c3.jpeg', caption: 'Opening Ceremony', description: 'Sundar Ghate, our respected Director, had the honor of felicitating Mr. Anil Rao, CEO of Primus Energy Solutions Pvt. Ltd., during the opening ceremony.' },
   { src: '/t4.jpeg', caption: 'Group Session', description: 'Under the expert guidance of Sundar Ghate Sir, our group session sharpened both skill and discipline.' },
   { src: '/t1.jpeg', caption: 'Group Session', description: 'A memorable training experience led by Sundar Ghate Sir — inspiring focus, unity, and excellence.' },
   { src: '/t2.jpeg', caption: 'Instructor Demo', description: 'Guided by Sundar Ghate Sir, each shot in our group session echoed confidence and precision..' },
-  { src: '/adi.jpeg', caption: 'Night Practice', description: 'Evening training under floodlights.' },
-  { src: '/parth.jpeg', caption: 'Trophy Wall', description: 'A moment of glory as our champions step forward, proving that hard work always hits the mark.' },
-  { src: '/girl1.jpeg', caption: 'Safety Drill', description: 'Practicing precision with responsibility during our safety drill on the shooting range.s' },
-  { src: '/medal.jpeg', caption: 'Indoor Practice', description: 'Pride shines as students of Eagle Star Shooting Academy are honored with well-deserved medals.' },
+  { src: '/adi.jpeg', caption: 'Guidens', description: 'Evening training under floodlights.' },
+  { src: '/parth.jpeg', caption: 'Honored', description: 'A proud moment as Senior Police Inspector Gautam Patare extended his greetings and encouragement to our academy' },
+  { src: '/girl1.jpeg', caption: 'Safety Drill', description: 'Practicing precision with responsibility during our safety drill on the shooting range.' },
+  { src: '/medal.jpeg', caption: 'Honored', description: 'Esha Singh and Koushik Gopu, shining talents trained by Sundar Ghate Sir, recognized and honored for their dedication and achievements' },
   { src: '/ips.jpeg', caption: 'Outdoor Field', description: 'Honored to see Sundar Ghate Sir, who had the privilege of training IPS Ravindra Singal — now Commissioner of Police, Nagpur & ADG' },
   { src: '/t3.jpeg', caption: 'Coaching Session', description: 'Honored to have Sundar Ghate Sir share his shooting mastery with the Indian Army Maratha Regiment YBC team.' },
-  { src: '/gallery/img15.jpg', caption: 'Team Outing', description: 'Academy recreational and bonding activities.' },
-  { src: '/gallery/img16.jpg', caption: 'Final Shootout', description: 'Top-tier competition closing event.' },
-];
+  { src: '/e1.jpeg', caption: 'Honored', description: 'Proud moment as Esha Singh, a shining talent and student of Sundar Ghate Sir, receives the prestigious Arjuna Award.' },
+ ];
 
 const videoClips = [
   {

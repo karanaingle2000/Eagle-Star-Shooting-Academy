@@ -33,6 +33,9 @@ const Footer = () => {
           </p>
           <p className="flex items-center gap-2 text-gray-300">
             <FaPhoneAlt className="text-2xl" />
+            <a href="tel:+918149222003" className="hover:underline">+91 8149222003</a>
+             <br />
+
             <a href="tel:+919823222202" className="hover:underline">+91 9823222202</a>
           </p>
           <p className="flex items-center gap-2 text-gray-300">

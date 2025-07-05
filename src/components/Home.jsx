@@ -6,10 +6,11 @@ import { FaBullseye, FaMedal, FaUserShield } from 'react-icons/fa';
 
 const Home = () => {
   return (
-    <div className="relative text-white min-h-screen bg-gray-900">
+    <div className="relative min-h-screen bg-[#243c2e] text-white transition-colors duration-500">
+
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col justify-center items-center text-center px-4 sm:px-6 bg-[url('/range-bg.jpg')] bg-cover bg-center">
-        <div className="absolute inset-0 bg-[rgba(0,60,0,0.75)] mix-blend-multiply" />
+        <div className="absolute inset-0 bg-white mix-blend-multiply" />
         <motion.div
           className="relative z-10 flex flex-col items-center"
           initial={{ opacity: 0, y: -30 }}
@@ -17,12 +18,13 @@ const Home = () => {
           transition={{ duration: 0.8 }}
         >
           <div className="w-52 sm:w-64 md:w-72 h-52 sm:h-64 md:h-72 rounded-full overflow-hidden mb-8 border-4 border-yellow-400 shadow-md">
-  <img src="/Logo1.jpg" alt="Academy Logo" className="w-full h-full object-cover mix-blend-screen" />
-</div>
-
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black text-yellow-300 tracking-wide drop-shadow-md font-[serif]">Eagle Star Shooting Academy</h1>
+            <img src="/Logo1.jpg" alt="Academy Logo" className="w-full h-full object-cover mix-blend-screen" />
+          </div>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-black tracking-wide drop-shadow-md font-[serif]">
+            Eagle Star Shooting Academy
+          </h1>
           <p className="text-lg sm:text-xl md:text-2xl mt-4 max-w-xl text-yellow-100 italic">Be Your Own Light.</p>
-          <a href="/contact" className="mt-6 bg-yellow-400 text-black font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition duration-300 shadow-lg">Join Us </a>
+          <p className="mt-6 bg-yellow-400 text-black font-bold px-8 py-3 rounded-full hover:bg-yellow-300 transition duration-300 shadow-lg">Join Us </p>
         </motion.div>
       </section>
 
@@ -67,7 +69,7 @@ const Home = () => {
 
       {/* Director Section */}
       <section className="bg-[url('/army-bg.jpg')] bg-cover bg-center bg-fixed text-white py-20 px-6">
-        <div className="bg-black bg-opacity-70 p-6 rounded-xl max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
+        <div className="bg-[#243c2e] bg-opacity-70 p-6 rounded-xl max-w-6xl mx-auto grid md:grid-cols-2 gap-8">
           <motion.div whileHover={{ scale: 1.03 }} className="overflow-hidden rounded-2xl border-4 border-yellow-400 shadow-lg">
             <img src="/Director.jpeg" alt="Director" className="w-full h-auto object-cover" />
           </motion.div>
@@ -75,16 +77,17 @@ const Home = () => {
             <h2 className="text-4xl font-bold text-yellow-400 mb-4">Meet Our Director</h2>
             <h3 className="text-2xl font-semibold mb-3">Mr. Sundar Ghate</h3>
             <p className="text-gray-300 text-lg leading-relaxed">
-            I began my coaching career in shooting in 2001 and turned professional in 2005 with the Aurangabad Rifle Association. From 2007 to 2012, I served as Chief Coach of the Aurangabad District Rifle Association, producing several national-level shooters.
+            Sundar Ghate began his coaching career in shooting in 2001 and turned professional in 2005 with the Aurangabad Rifle Association. From 2007 to 2012, he served as the Chief Coach of the Aurangabad District Rifle Association, where he produced several national-level shooters.
 
-In 2013, I founded a professional coaching center at Shiv Chhatrapati Sports Complex, Pune. Under my mentorship, many athletes have achieved success at national and international levels. A career highlight was in 2017, when my student Esha Singh won 3 gold medals at the National Shooting Championship and later represented India at the 2024 Paris Olympics.
+In 2013, he established a professional coaching center at the Shiv Chhatrapati Sports Complex, Pune. Under his mentorship, many athletes have achieved success at both national and international levels. A major highlight of his career came in 2017, when his student Esha Singh won three gold medals at the National Shooting Championship and later represented India at the 2024 Paris Olympics.
 
-I’ve also coached the Maratha Regiment’s YBC team and trained athletes from various states including Maharashtra, Telangana, Andhra Pradesh, Haryana, and Karnataka. With over 25 years of experience, my mission is to continue shaping world-class shooters for India.            </p>
+He has also coached the Maratha Regiment’s YBC team and trained athletes from various states, including Maharashtra, Telangana, Andhra Pradesh, Haryana, and Karnataka. With over 25 years of experience, he remains dedicated to shaping world-class shooters for India.                  {/* Truncated for brevity */}
+            </p>
           </div>
         </div>
       </section>
 
-      {/* Call to Action */}
+      {/* CTA Section */}
       <motion.section
         className="bg-yellow-400 text-black py-16 text-center px-4 shadow-inner"
         initial={{ opacity: 0 }}

@@ -87,7 +87,7 @@ const About = () => {
           </h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-center">
             {[
-              "🏅 Experienced and NIS Certified National Coaches",
+              "🏅 Experienced and NIS Certified  Coaches",
               "🎯 World-Class Shooting Range and Equipment",
               "📈 Individual Progress Tracking and Mental Conditioning",
               "🧠 Focused Psychological and Physical Fitness Training",

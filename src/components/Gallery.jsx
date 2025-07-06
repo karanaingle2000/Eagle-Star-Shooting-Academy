@@ -107,7 +107,7 @@ const Gallery = () => {
         {/* Video Section */}
         <div className="mt-16 text-center">
           <marquee behavior="scroll" direction="left" scrollamount="6" className="text-yellow-400 text-lg font-semibold mb-4">
-            Eagle Star Shooting Academy - Behind the Scenes Training Moments
+          With deep respect, we greet and thank the legends who inspire every shot fired in excellence.
           </marquee>
 
           <p className="text-yellow-300 text-sm sm:text-base max-w-4xl mx-auto mb-6">

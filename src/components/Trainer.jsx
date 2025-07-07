@@ -3,6 +3,7 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { FaQuoteLeft } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 
 const trainers = [
   {
@@ -30,11 +31,17 @@ const trainers = [
 
 const Trainer = () => {
   const [zoomImage, setZoomImage] = useState(null);
+  const { colors } = useTheme();
 
   return (
-    <div className="bg-gradient-to-b from-[#243c2e] via-[#1e2d24] to-[#121b16] text-white py-20 px-4 sm:px-6 min-h-screen relative">
+    <div className="py-20 px-4 sm:px-6 min-h-screen relative transition-colors duration-300"
+         style={{ 
+           background: `linear-gradient(to bottom, ${colors.primary}, ${colors.secondary}, ${colors.primary})`,
+           color: colors.textPrimary
+         }}>
       <motion.h2
-        className="text-4xl font-extrabold text-center mb-12 text-[#d4af37] tracking-widest uppercase"
+        className="text-4xl font-extrabold text-center mb-12 tracking-widest uppercase"
+        style={{ color: colors.accent }}
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
@@ -46,11 +53,24 @@ const Trainer = () => {
         {trainers.map((trainer, index) => (
           <motion.div
             key={index}
-            className="bg-[#1e2d24] rounded-3xl overflow-hidden shadow-lg hover:shadow-[#d4af37]/60 border border-[#d4af37] transform transition-transform duration-500 hover:scale-[1.03] hover:-translate-y-1"
+            className="rounded-3xl overflow-hidden shadow-lg border transform transition-transform duration-500"
+            style={{ 
+              backgroundColor: colors.card,
+              borderColor: colors.accent,
+              boxShadow: `0 10px 25px ${colors.accent}30`
+            }}
             whileHover={{ scale: 1.05 }}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
+            onMouseEnter={(e) => {
+              e.currentTarget.style.transform = 'scale(1.03) translateY(-4px)';
+              e.currentTarget.style.boxShadow = `0 15px 35px ${colors.accent}60`;
+            }}
+            onMouseLeave={(e) => {
+              e.currentTarget.style.transform = 'scale(1)';
+              e.currentTarget.style.boxShadow = `0 10px 25px ${colors.accent}30`;
+            }}
           >
             <div className="w-full h-96 relative cursor-pointer group" onClick={() => setZoomImage(trainer.image)}>
               <img
@@ -61,12 +81,18 @@ const Trainer = () => {
             </div>
             <div className="p-5 flex flex-col justify-between min-h-[250px]">
               <div>
-                <h3 className="text-xl font-bold text-[#d4af37] mb-1">{trainer.name}</h3>
-                <p className="text-sm text-[#a3b18a] italic mb-3">{trainer.title}</p>
+                <h3 className="text-xl font-bold mb-1" style={{ color: colors.accent }}>
+                  {trainer.name}
+                </h3>
+                <p className="text-sm italic mb-3" style={{ color: colors.textSecondary }}>
+                  {trainer.title}
+                </p>
               </div>
-              <p className="text-sm text-gray-300 leading-snug mb-3">{trainer.bio}</p>
-              <div className="text-[#9caea9] text-sm italic flex items-start gap-2">
-                <FaQuoteLeft className="text-[#d4af37] mt-1" />
+              <p className="text-sm leading-snug mb-3" style={{ color: colors.textSecondary }}>
+                {trainer.bio}
+              </p>
+              <div className="text-sm italic flex items-start gap-2" style={{ color: colors.textMuted }}>
+                <FaQuoteLeft style={{ color: colors.accent }} className="mt-1" />
                 <span>{trainer.quote}</span>
               </div>
             </div>
@@ -82,7 +108,8 @@ const Trainer = () => {
           <img
             src={zoomImage}
             alt="Zoomed Trainer"
-            className="max-w-4xl max-h-[90vh] object-contain border-4 border-[#d4af37] rounded-2xl shadow-2xl animate-fadeIn"
+            className="max-w-4xl max-h-[90vh] object-contain border-4 rounded-2xl shadow-2xl animate-fadeIn"
+            style={{ borderColor: colors.accent }}
           />
         </div>
       )}

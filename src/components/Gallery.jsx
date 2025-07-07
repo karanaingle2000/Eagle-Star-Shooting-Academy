@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { FaPlay, FaPause, FaExpand } from 'react-icons/fa';
+import { useTheme } from '../context/ThemeContext';
 
 const galleryImages = [
   { src: '/c1.jpeg', caption: 'Opening Ceremony', description: 'A moment of pride as Shiv Chhatrapati Awardee Seema Patwardhan graced our opening ceremony with a ceremonial ribbon cutting.' },
@@ -42,6 +43,7 @@ const videoClips = [
 const Gallery = () => {
   const [selectedImage, setSelectedImage] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState('all');
+  const { colors } = useTheme();
 
   const categories = [
     { id: 'all', name: 'All' },
@@ -62,8 +64,13 @@ const Gallery = () => {
     : galleryImages.filter(img => getImageCategory(img.caption) === selectedCategory);
 
   return (
-    <div className="bg-black text-white min-h-screen">
-      <section className="py-20 sm:py-24 px-4 sm:px-6 bg-gradient-to-b from-black/80 via-gray-900/80 to-black/80 border-t border-yellow-400">
+    <div className="min-h-screen transition-colors duration-300" style={{ backgroundColor: colors.primary }}>
+      <section className="py-20 sm:py-24 px-4 sm:px-6 border-t" 
+               style={{ 
+                 backgroundColor: `${colors.primary}cc`,
+                 borderTopColor: colors.accent,
+                 color: colors.textPrimary
+               }}>
 
         {/* Gallery Heading */}
         <motion.div
@@ -72,10 +79,10 @@ const Gallery = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold mb-4 text-yellow-400 uppercase">
+          <h2 className="text-3xl sm:text-4xl font-bold mb-4 uppercase" style={{ color: colors.accent }}>
             Gallery
           </h2>
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <p className="text-lg max-w-2xl mx-auto" style={{ color: colors.textSecondary }}>
             Witness the journey of excellence, dedication, and achievement at Eagle Star Shooting Academy
           </p>
         </motion.div>
@@ -91,11 +98,22 @@ const Gallery = () => {
             <button
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
-              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
-                selectedCategory === category.id
-                  ? 'bg-yellow-400 text-black'
-                  : 'bg-gray-800 text-white hover:bg-gray-700'
-              }`}
+              className={`px-6 py-2 rounded-full font-semibold transition-all duration-300`}
+              style={{
+                backgroundColor: selectedCategory === category.id ? colors.accent : colors.card,
+                color: selectedCategory === category.id ? colors.buttonPrimaryText : colors.textPrimary,
+                border: `1px solid ${selectedCategory === category.id ? colors.accent : colors.border}`
+              }}
+              onMouseEnter={(e) => {
+                if (selectedCategory !== category.id) {
+                  e.target.style.backgroundColor = colors.cardHover;
+                }
+              }}
+              onMouseLeave={(e) => {
+                if (selectedCategory !== category.id) {
+                  e.target.style.backgroundColor = colors.card;
+                }
+              }}
             >
               {category.name}
             </button>
@@ -107,7 +125,11 @@ const Gallery = () => {
           {filteredImages.map((img, i) => (
             <motion.div
               key={i}
-              className="rounded-xl overflow-hidden shadow-xl border border-yellow-500 group cursor-pointer bg-gray-900"
+              className="rounded-xl overflow-hidden shadow-xl border group cursor-pointer"
+              style={{ 
+                backgroundColor: colors.card,
+                borderColor: colors.accent
+              }}
               whileHover={{ scale: 1.03, y: -5 }}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -126,8 +148,12 @@ const Gallery = () => {
               </div>
 
               <div className="p-4 text-center">
-                <p className="text-yellow-400 font-semibold text-sm sm:text-base mb-2">{img.caption}</p> 
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed">{img.description}</p>
+                <p className="font-semibold text-sm sm:text-base mb-2" style={{ color: colors.accent }}>
+                  {img.caption}
+                </p> 
+                <p className="text-xs sm:text-sm leading-relaxed" style={{ color: colors.textSecondary }}>
+                  {img.description}
+                </p>
               </div>
             </motion.div>
           ))}
@@ -152,7 +178,8 @@ const Gallery = () => {
                 exit={{ scale: 0.8 }}
               />
               <button 
-                className="absolute top-4 right-4 text-white text-2xl hover:text-yellow-400 transition"
+                className="absolute top-4 right-4 text-white text-2xl transition"
+                style={{ color: colors.accent }}
                 onClick={() => setSelectedImage(null)}
               >
                 ✕
@@ -168,10 +195,16 @@ const Gallery = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl sm:text-3xl font-bold text-yellow-400 mb-8">Messages from Our Legends</h3>
+          <h3 className="text-2xl sm:text-3xl font-bold mb-8" style={{ color: colors.accent }}>
+            Messages from Our Legends
+          </h3>
           
-          <div className="bg-yellow-400/10 rounded-2xl p-6 mb-8 border border-yellow-400/30">
-            <p className="text-yellow-300 text-base sm:text-lg max-w-4xl mx-auto leading-relaxed">
+          <div className="rounded-2xl p-6 mb-8 border" 
+               style={{ 
+                 backgroundColor: `${colors.accent}1a`,
+                 borderColor: `${colors.accent}4d`
+               }}>
+            <p className="text-base sm:text-lg max-w-4xl mx-auto leading-relaxed" style={{ color: colors.accent }}>
               We are honored by the presence and support of distinguished personalities who inspire excellence. 
               Their words of encouragement fuel our mission to create world-class shooters and build character through sport.
             </p>
@@ -181,11 +214,21 @@ const Gallery = () => {
             {videoClips.map((video, index) => (
               <motion.div 
                 key={index}
-                className="bg-gray-900 rounded-2xl overflow-hidden border border-yellow-400/30 hover:border-yellow-400 transition-all duration-300"
+                className="rounded-2xl overflow-hidden border transition-all duration-300"
+                style={{ 
+                  backgroundColor: colors.card,
+                  borderColor: `${colors.accent}4d`
+                }}
                 whileHover={{ y: -5 }}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.borderColor = colors.accent;
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.borderColor = `${colors.accent}4d`;
+                }}
               >
                 <div className="relative">
                   <video
@@ -198,9 +241,15 @@ const Gallery = () => {
                   />
                 </div>
                 <div className="p-6">
-                  <h4 className="text-yellow-300 font-semibold text-lg mb-2">{video.caption}</h4>
-                  <p className="text-sm text-gray-400 mb-3 leading-relaxed">{video.description}</p>
-                  <p className="text-sm text-yellow-500 font-bold">{video.slogan}</p>
+                  <h4 className="font-semibold text-lg mb-2" style={{ color: colors.accent }}>
+                    {video.caption}
+                  </h4>
+                  <p className="text-sm mb-3 leading-relaxed" style={{ color: colors.textSecondary }}>
+                    {video.description}
+                  </p>
+                  <p className="text-sm font-bold" style={{ color: colors.accent }}>
+                    {video.slogan}
+                  </p>
                 </div>
               </motion.div>
             ))}
@@ -209,20 +258,45 @@ const Gallery = () => {
 
         {/* Call to Action */}
         <motion.div 
-          className="mt-20 text-center bg-gradient-to-r from-yellow-400/20 to-yellow-500/20 rounded-2xl p-8 border border-yellow-400/30"
+          className="mt-20 text-center rounded-2xl p-8 border"
+          style={{ 
+            background: `linear-gradient(to right, ${colors.accent}33, ${colors.accentHover}33)`,
+            borderColor: `${colors.accent}4d`,
+            color: colors.textPrimary
+          }}
           initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
         >
-          <h3 className="text-2xl font-bold text-yellow-400 mb-4">Be Part of Our Success Story</h3>
-          <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
+          <h3 className="text-2xl font-bold mb-4" style={{ color: colors.accent }}>
+            Be Part of Our Success Story
+          </h3>
+          <p className="mb-6 max-w-2xl mx-auto" style={{ color: colors.textSecondary }}>
             Join Eagle Star Shooting Academy and create your own moments of triumph and excellence.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/contact" className="bg-yellow-400 text-black px-8 py-3 rounded-full font-semibold hover:bg-yellow-300 transition">
+            <a href="/contact" 
+               className="px-8 py-3 rounded-full font-semibold transition"
+               style={{ 
+                 backgroundColor: colors.accent, 
+                 color: colors.buttonPrimaryText 
+               }}>
               Start Your Journey
             </a>
-            <a href="/trainer" className="border-2 border-yellow-400 text-yellow-400 px-8 py-3 rounded-full font-semibold hover:bg-yellow-400 hover:text-black transition">
+            <a href="/trainer" 
+               className="border-2 px-8 py-3 rounded-full font-semibold transition"
+               style={{ 
+                 borderColor: colors.accent, 
+                 color: colors.accent 
+               }}
+               onMouseEnter={(e) => {
+                 e.target.style.backgroundColor = colors.accent;
+                 e.target.style.color = colors.buttonPrimaryText;
+               }}
+               onMouseLeave={(e) => {
+                 e.target.style.backgroundColor = 'transparent';
+                 e.target.style.color = colors.accent;
+               }}>
               Meet Our Coaches
             </a>
           </div>

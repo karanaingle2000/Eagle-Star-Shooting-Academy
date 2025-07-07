@@ -41,7 +41,7 @@ const Footer = () => {
               Plot NO 23/24 N S Plaza E Sector MIDC Industrial Area Chikalthana, Chhatrapati Sambhaji Nagar 431210, Maharashtra, India
             </a>
           </p>
-          <p className="flex items-center gap-2" style={{ color: colors.textSecondary }}>
+          <div className="flex items-center gap-2" style={{ color: colors.textSecondary }}>
             <FaPhoneAlt className="text-2xl" />
             <div className="flex flex-col">
               <a href="tel:+918149222003" 
@@ -57,7 +57,7 @@ const Footer = () => {
                 +91 9823222202
               </a>
             </div>
-          </p>
+          </div>
           <p className="flex items-center gap-2" style={{ color: colors.textSecondary }}>
             <FaEnvelope className="text-2xl" />
             <a href="mailto:eaglessacademy@gmail.com" 
